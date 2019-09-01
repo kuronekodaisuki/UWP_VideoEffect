@@ -2,7 +2,9 @@
 
 #include "OpenCVSharp.h"
 
-using System.Runtime.InteropServices;
+#pragma managed
+
+//using System.Runtime.InteropServices;
 
 namespace OpenCVSharp
 {
@@ -13,7 +15,7 @@ namespace OpenCVSharp
 
 	int DNN::ReadNetFromCaffe(String^ prototext, String^ model)
 	{
-		cv:: dnn::readNetFromCaffe(prototext, model);
+		//cv:: dnn::readNetFromCaffe(prototext, model);
 		return 0;
 	}
 }

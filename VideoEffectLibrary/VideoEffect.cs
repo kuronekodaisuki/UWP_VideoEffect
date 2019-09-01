@@ -9,6 +9,9 @@ using Windows.Media;
 using Windows.Media.Effects;
 using Windows.Media.MediaProperties;
 
+
+//using OpenCVSharp;
+
 namespace VideoEffectLibrary
 {
     public sealed class ExampleVideoEffect: IBasicVideoEffect
