@@ -1,0 +1,18 @@
+import "oaidl.idl";
+import "ocidl.idl";
+
+import "Windows.Media.idl";
+
+#include <sdkddkver.h>
+
+
+// Reference https://docs.microsoft.com/ja-jp/cpp/cppcx/wrl/walkthrough-creating-a-windows-store-app-using-wrl-and-media-foundation?view=vs-2019
+
+namespace GrayscaleTransform
+{
+	[version(NTDDI_WIN8), activatable(NTDDI_WIN8)]
+	runtimeclass GrayscaleEffect
+	{
+		[default] interface Windows.Media.IMediaExtension;
+	}
+}

@@ -24,6 +24,12 @@
     <ClInclude Include="Resource.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
+    <ClInclude Include="BufferLock.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="OpenCVSharp.cpp">
@@ -33,6 +39,9 @@
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="stdafx.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="GrayscaleTransform.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>
@@ -45,5 +54,10 @@
     <Image Include="app.ico">
       <Filter>リソース ファイル</Filter>
     </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Midl Include="GrayscaleTransform.idl">
+      <Filter>ソース ファイル</Filter>
+    </Midl>
   </ItemGroup>
 </Project>
