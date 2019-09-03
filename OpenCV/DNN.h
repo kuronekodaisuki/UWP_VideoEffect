@@ -4,7 +4,8 @@
 #include <opencv2/dnn.hpp>
 
 using namespace Windows::Foundation;
-using namespace Windows::Graphics;
+using namespace Windows::Graphics::Imaging;
+using namespace Windows::UI::Xaml::Media::Imaging;
 
 namespace OpenCV
 {
