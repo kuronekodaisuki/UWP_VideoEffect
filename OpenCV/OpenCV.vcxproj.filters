@@ -9,11 +9,13 @@
   <ItemGroup>
     <ClCompile Include="pch.cpp" />
     <ClCompile Include="DNN.cpp" />
+    <ClCompile Include="Aruco.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
     <ClInclude Include="DNN.h" />
     <ClInclude Include="resource.h" />
+    <ClInclude Include="Aruco.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="OpenCV.rc">
