@@ -14,8 +14,11 @@ namespace OpenCV
 {
 	class Aruco
 	{
+		cv::Ptr<cv::aruco::Dictionary> _dictionary;
 	public:
-		Aruco();
+		Aruco(cv::aruco::PREDEFINED_DICTIONARY_NAME name = cv::aruco::PREDEFINED_DICTIONARY_NAME::DICT_6X6_100);
 		~Aruco();
+
+		void Detect(int* data, size_t length);
 	};
 }
