@@ -10,12 +10,14 @@
     <ClCompile Include="pch.cpp" />
     <ClCompile Include="DNN.cpp" />
     <ClCompile Include="Aruco.cpp" />
+    <ClCompile Include="OpenCVHelper.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
     <ClInclude Include="DNN.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="Aruco.h" />
+    <ClInclude Include="OpenCVHelper.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="OpenCV.rc">

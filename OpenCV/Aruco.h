@@ -22,3 +22,13 @@ namespace OpenCV
 		void Detect(int* data, size_t length);
 	};
 }
+
+#define DLLEXPORT __declspec(dllexport)
+
+extern "C" 
+{
+	DLLEXPORT int __stdcall CreateArucoInstance();
+
+	DLLEXPORT int __stdcall DetectMarkers(uchar* data, uint width, uint height);
+
+}
