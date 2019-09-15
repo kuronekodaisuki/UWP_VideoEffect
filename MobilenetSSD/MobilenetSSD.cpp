@@ -12,9 +12,22 @@ using namespace cv;
 
 int main(int argc, char *argv[])
 {
-	if (2 <= argc)
+	dnn::Net _net;
+	switch (argc)
 	{
+	case 4:
 		Mat image = imread(argv[1]);
+		_net = cv::dnn::readNetFromCaffe(argv[2], argv[3]);
+		_net.setPreferableBackend(cv::dnn::DNN_BACKEND_OPENCV);
+		_net.setPreferableTarget(cv::dnn::DNN_TARGET_OPENCL);
+
+		//cv::Mat image(height, width, CV_8UC4, data);
+		cv::Mat blob;
+		//cv::cvtColor(bgra, rgb, cv::COLOR_BGRA2BGR);
+		blob = cv::dnn::blobFromImage(image, 1.0, cv::Size(), cv::Scalar(), false, false);
+		_net.setInput(blob);
+		cv::Mat objects = _net.forward();
+
 		imshow("Image", image);
 		while (true)
 		{
