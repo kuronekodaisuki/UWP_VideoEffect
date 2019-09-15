@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoEffectLibrary", "..\Vi
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OpenCV", "..\OpenCV\OpenCV.vcxproj", "{03E17183-4E19-48D6-B09E-4F468B0C2634}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MobilenetSSD", "..\MobilenetSSD\MobilenetSSD.vcxproj", "{0A3B582B-88DD-440A-8EB0-5523EE55BFCD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -79,6 +81,20 @@ Global
 		{03E17183-4E19-48D6-B09E-4F468B0C2634}.Release|x64.Build.0 = Release|x64
 		{03E17183-4E19-48D6-B09E-4F468B0C2634}.Release|x86.ActiveCfg = Release|Win32
 		{03E17183-4E19-48D6-B09E-4F468B0C2634}.Release|x86.Build.0 = Release|Win32
+		{0A3B582B-88DD-440A-8EB0-5523EE55BFCD}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{0A3B582B-88DD-440A-8EB0-5523EE55BFCD}.Debug|ARM.ActiveCfg = Debug|Win32
+		{0A3B582B-88DD-440A-8EB0-5523EE55BFCD}.Debug|ARM64.ActiveCfg = Debug|Win32
+		{0A3B582B-88DD-440A-8EB0-5523EE55BFCD}.Debug|x64.ActiveCfg = Debug|x64
+		{0A3B582B-88DD-440A-8EB0-5523EE55BFCD}.Debug|x64.Build.0 = Debug|x64
+		{0A3B582B-88DD-440A-8EB0-5523EE55BFCD}.Debug|x86.ActiveCfg = Debug|Win32
+		{0A3B582B-88DD-440A-8EB0-5523EE55BFCD}.Debug|x86.Build.0 = Debug|Win32
+		{0A3B582B-88DD-440A-8EB0-5523EE55BFCD}.Release|Any CPU.ActiveCfg = Release|Win32
+		{0A3B582B-88DD-440A-8EB0-5523EE55BFCD}.Release|ARM.ActiveCfg = Release|Win32
+		{0A3B582B-88DD-440A-8EB0-5523EE55BFCD}.Release|ARM64.ActiveCfg = Release|Win32
+		{0A3B582B-88DD-440A-8EB0-5523EE55BFCD}.Release|x64.ActiveCfg = Release|x64
+		{0A3B582B-88DD-440A-8EB0-5523EE55BFCD}.Release|x64.Build.0 = Release|x64
+		{0A3B582B-88DD-440A-8EB0-5523EE55BFCD}.Release|x86.ActiveCfg = Release|Win32
+		{0A3B582B-88DD-440A-8EB0-5523EE55BFCD}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
