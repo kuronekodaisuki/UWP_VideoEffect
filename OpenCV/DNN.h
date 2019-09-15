@@ -18,3 +18,13 @@ namespace OpenCV
         DNN();
     };
 }
+
+#define DLLEXPORT __declspec(dllexport)
+
+extern "C"
+{
+	DLLEXPORT int __stdcall CreateCaffeInstance(const char * proto, const char * caffemodel);
+
+	DLLEXPORT int __stdcall DetectObjects(uchar* data, uint width, uint height);
+
+}
