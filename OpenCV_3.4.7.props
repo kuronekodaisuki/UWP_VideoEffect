@@ -16,6 +16,7 @@
       <AdditionalDependencies>opencv_world347d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
+      <Command>copy /Y $(OPENCV_DIR)\x64\vc15\bin\opencv_world347d.dll $(OutDir)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <!-- Release|x64 -->
@@ -30,6 +31,7 @@
       <AdditionalDependencies>opencv_world347.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
+      <Command>copy /Y $(OPENCV_DIR)\x64\vc15\bin\opencv_world347.dll $(OutDir)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
 </Project>
