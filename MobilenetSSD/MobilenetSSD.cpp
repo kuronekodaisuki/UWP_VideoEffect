@@ -27,6 +27,7 @@ int main(int argc, char *argv[])
 		blob = cv::dnn::blobFromImage(image, 1.0, cv::Size(), cv::Scalar(), false, false);
 		_net.setInput(blob);
 		cv::Mat objects = _net.forward();
+		// この後　http://tecsingularity.com/opencv/opencv_googlenet/
 
 		imshow("Image", image);
 		while (true)
