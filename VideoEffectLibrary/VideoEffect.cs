@@ -4,12 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using Microsoft.Graphics;
+using Microsoft.Graphics.Canvas;
+using Microsoft.Graphics.Canvas.UI.Xaml;
+
 using Windows.Foundation.Collections;
+using Windows.Graphics;
 using Windows.Graphics.Imaging;
 using Windows.Graphics.DirectX.Direct3D11;
 using Windows.Media;
 using Windows.Media.Effects;
 using Windows.Media.MediaProperties;
+//using Windows.UI.Xaml.Media;
 
 
 //using OpenCVSharp;
@@ -23,7 +29,13 @@ namespace VideoEffectLibrary
 
         public void ProcessFrame(ProcessVideoFrameContext context)
         {
-            throw new NotImplementedException();
+            //using (CanvasBitmap input = CanvasBitmap.CreateFromDirect3D11Surface(_device, context.InputFrame.Direct3DSurface))
+            //using (CanvasRenderTarget target = CanvasRenderTarget.CreateFromDirect3D11Surface(_device, context.OutputFrame.Direct3DSurface))
+            //using (CanvasDrawingSession session = target.CreateDrawingSession())
+            {
+                BitmapBuffer buffer = context.InputFrame.SoftwareBitmap.LockBuffer(BitmapBufferAccessMode.Read);
+                
+            }
         }
 
 
@@ -34,10 +46,13 @@ namespace VideoEffectLibrary
 
         public void Close(MediaEffectClosedReason reason)
         {
+            if (_device != null)
+                _device.Dispose();
         }
 
         public void DiscardQueuedFrames()
         {
+            // Do nothing
         }
 
         public bool IsReadOnly
@@ -45,7 +60,16 @@ namespace VideoEffectLibrary
             get { return true; }
         }
 
-        public IReadOnlyList<VideoEncodingProperties> SupportedEncodingProperties => throw new NotImplementedException();
+        public IReadOnlyList<VideoEncodingProperties> SupportedEncodingProperties
+        {
+            get
+            {
+                return new List<VideoEncodingProperties>()
+                {
+                    VideoEncodingProperties.CreateUncompressed(MediaEncodingSubtypes.Argb32, 1280, 720)
+                };
+            }
+        }
 
         public bool TimeIndependent
         {
@@ -57,6 +81,9 @@ namespace VideoEffectLibrary
             _properties = configuration;
         }
 
-        MediaMemoryTypes IBasicVideoEffect.SupportedMemoryTypes => throw new NotImplementedException();
+        MediaMemoryTypes IBasicVideoEffect.SupportedMemoryTypes
+        {
+            get { return MediaMemoryTypes.GpuAndCpu; }
+        }
     }
 }
