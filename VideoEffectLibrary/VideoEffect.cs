@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -24,24 +25,35 @@ namespace VideoEffectLibrary
 {
     public sealed class ExampleVideoEffect: IBasicVideoEffect
     {
+        [DllImport("OpenCV.dll", EntryPoint = "CreateONNX")]
+        static extern int CreateONNX(string onnx);
+
+        [DllImport("OpenCV.dll", EntryPoint = "DetectONNX")]
+        static extern int DetectONNX(IntPtr data, int width, int height, int channel);
+
         private IPropertySet _properties;
-        private IDirect3DDevice _device;
+        private CanvasDevice _device;
 
         public void ProcessFrame(ProcessVideoFrameContext context)
         {
-            //using (CanvasBitmap input = CanvasBitmap.CreateFromDirect3D11Surface(_device, context.InputFrame.Direct3DSurface))
-            //using (CanvasRenderTarget target = CanvasRenderTarget.CreateFromDirect3D11Surface(_device, context.OutputFrame.Direct3DSurface))
-            //using (CanvasDrawingSession session = target.CreateDrawingSession())
+            using (CanvasBitmap input = CanvasBitmap.CreateFromDirect3D11Surface(_device, context.InputFrame.Direct3DSurface))
+            using (CanvasRenderTarget target = CanvasRenderTarget.CreateFromDirect3D11Surface(_device, context.OutputFrame.Direct3DSurface))
+            using (CanvasDrawingSession session = target.CreateDrawingSession())
             {
-                BitmapBuffer buffer = context.InputFrame.SoftwareBitmap.LockBuffer(BitmapBufferAccessMode.Read);
-                
+                byte[] bytes = input.GetPixelBytes();
+                IntPtr ptr = Marshal.AllocHGlobal(bytes.Length);
+                Marshal.Copy(bytes, 0, ptr, bytes.Length);
+
+
+
+                Marshal.FreeHGlobal(ptr);
             }
         }
 
 
         public void SetEncodingProperties(VideoEncodingProperties encodingProperties, IDirect3DDevice device)
         {
-            _device = device;
+            _device = CanvasDevice.CreateFromDirect3D11Device(device);
         }
 
         public void Close(MediaEffectClosedReason reason)
