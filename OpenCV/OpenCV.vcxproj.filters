@@ -9,16 +9,12 @@
   <ItemGroup>
     <ClCompile Include="pch.cpp" />
     <ClCompile Include="DNN.cpp" />
-    <ClCompile Include="Aruco.cpp" />
-    <ClCompile Include="OpenCVHelper.cpp" />
     <ClCompile Include="ONNX.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
     <ClInclude Include="DNN.h" />
     <ClInclude Include="resource.h" />
-    <ClInclude Include="Aruco.h" />
-    <ClInclude Include="OpenCVHelper.h" />
     <ClInclude Include="ONNX.h" />
   </ItemGroup>
   <ItemGroup>
